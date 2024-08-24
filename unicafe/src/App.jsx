@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import Statistics from './components/Statistics'
+import Button from './components/Button'
+import "./App.css"
 
 function App() {
   const [good, setGood] = useState(0)
@@ -9,13 +11,11 @@ function App() {
   return (
     <>
       <h1>Give Feedback</h1>
-      <button onClick={() => setBad(bad + 1)}>Bad</button>
-      <button onClick={() => setNeutral(neutral + 1)}>Neutral</button>
-      <button onClick={() => setGood(good + 1)}>Good</button>
-      
+      <Button onClick={() => setBad(bad + 1)} buttonText="Bad"/>
+      <Button onClick={() => setNeutral(bad + 1)} buttonText="Neutral"/>
+      <Button onClick={() => setGood(bad + 1)} buttonText="Good"/>
+
       <Statistics good={good} bad={bad} neutral={neutral} />
-
-
     </>
   )
 }
